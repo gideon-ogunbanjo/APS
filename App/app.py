@@ -65,6 +65,16 @@ def main():
         st.write("### Model Evaluation")
         st.write(f"Mean Squared Error: {mse:.2f}")
         st.write(f"R-squared: {r2:.2f}")
+        
+        # Predictions
+        st.write("### Make Predictions")
+        new_data = {}
+        for feature in selected_features:
+            new_data[feature] = st.number_input(f"Enter {feature}", value=0.0)
+        new_df = pd.DataFrame([new_data])
+        prediction = model.predict(new_df)
+        st.write(f"Predicted {target_variable}: {prediction[0]:.2f}")
+
 
 
 
