@@ -44,7 +44,7 @@ def main():
 
         if model_choice == "Linear Regression":
             model = LinearRegression()
-            model_code = "model = LinearRegression()\nmodel.fit(X_train, y_train)"
+            model_code = "from sklearn.linear_model import LinearRegression \n init: clf = LinearRegression() \n train: clf.fit(X_train, y_train) \n evaluate: score = mean_squared_error(y_test, clf.predict(X_test))"
         elif model_choice == "Decision Tree":
             model = DecisionTreeRegressor()
             model_code = "model = DecisionTreeRegressor()\nmodel.fit(X_train, y_train)"
