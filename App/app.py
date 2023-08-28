@@ -16,7 +16,7 @@ st.set_page_config(
 )
 # Main Function
 def main():
-    st.title("APS - Algorithm Predictive Modeling App")
+    st.title("APS - Algorithm Predictive Studio")
     st.write("APS is an Algorithm Predictive Modeling App. Upload a dataset, choose target variables and features, train a basic predictive model like linear regression, decision tree, or random forest and display evaluation metrics and predictions on new data.")
     
     # File Uploader Widget
