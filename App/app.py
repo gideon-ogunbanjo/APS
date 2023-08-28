@@ -89,3 +89,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
+st.markdown(link, unsafe_allow_html=True)
