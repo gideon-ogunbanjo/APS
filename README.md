@@ -11,7 +11,7 @@ APS is an Algorithm Predictive Studio built using Streamlit. The app allows user
 - Accurate Predictions
 
 ### Limitations:
-1. Algorithm Selection: APS is limited to Supervised Learning Algorithms only.
+1. Algorithm Selection: APS is limited to Regression Algorithms only.
 2. Dataset Type: APS is limited to CSV files only for now. More updates will be released with diversity across all types of datasets.
 3. Limited Dataset Size: APS is designed to handle relatively small to medium-sized datasets (200MB). For large datasets with thousands of samples and numerous features, the app's performance might be compromised, leading to slower execution times and potential memory limitations.
 
