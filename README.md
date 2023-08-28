@@ -1,6 +1,6 @@
-# Algorithm Predictive Modeling App (APS)
+# Algorithm Predictive Studio(APS)
 
-APS is an Algorithm Predictive Modeling App built using Streamlit. The app allows users to upload a dataset, select target variables and features, train various regression algorithms (Linear Regression, Decision Tree, Random Forest, Support Vector Machine, and k-Nearest Neighbors), and visualize evaluation metrics and predictions on new data.
+APS is an Algorithm Predictive Studio built using Streamlit. The app allows users to upload a dataset, select target variables and features, train various regression algorithms (Linear Regression, Decision Tree, Random Forest, Support Vector Machine, and k-Nearest Neighbors), and visualize evaluation metrics and predictions on new data.
 
 ### Features
 - Dataset Upload and Visualization
