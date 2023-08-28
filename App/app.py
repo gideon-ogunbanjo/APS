@@ -44,14 +44,19 @@ def main():
 
         if model_choice == "Linear Regression":
             model = LinearRegression()
+            model_code = "model = LinearRegression()\nmodel.fit(X_train, y_train)"
         elif model_choice == "Decision Tree":
             model = DecisionTreeRegressor()
+            model_code = "model = DecisionTreeRegressor()\nmodel.fit(X_train, y_train)"
         elif model_choice == "Support Vector Machine":
             model = SVR()
+            model_code = "model = SVR()\nmodel.fit(X_train, y_train)"
         elif model_choice == "k-Nearest Neighbors":
             model = KNeighborsRegressor()
+            model_code = "model = KNeighborsRegressor()\nmodel.fit(X_train, y_train)"
         else:
             model = RandomForestRegressor()
+            model_code = "model = RandomForestRegressor()\nmodel.fit(X_train, y_train)"
             
             
         # Model Training
@@ -65,6 +70,10 @@ def main():
         st.write("### Model Evaluation")
         st.write(f"Mean Squared Error: {mse:.2f}")
         st.write(f"R-squared: {r2:.2f}")
+        
+        # Code Snippet
+        st.write("### Training Algorithm Code Snippet")
+        st.code(model_code)
         
         # Predictions
         st.write("### Make Predictions")
