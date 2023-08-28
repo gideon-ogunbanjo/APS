@@ -60,7 +60,7 @@ def main():
             """
         elif model_choice == "Support Vector Machine":
             model = SVR()
-            model_code = """"
+            model_code = """
                 from sklearn.svm import SVR
                 clf = SVR(kernel=kernel)
                 clf.fit(X_train, y_train)
