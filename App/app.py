@@ -35,7 +35,23 @@ def main():
         X = data[selected_features]
         y = data[target_variable]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        
+        # Model Selection
+        model_choice = st.sidebar.radio(
+            "Select an Algorithm",
+            ("Linear Regression", "Decision Tree", "Random Forest", "Support Vector Machine", "k-Nearest Neighbors")
+        )
 
+        if model_choice == "Linear Regression":
+            model = LinearRegression()
+        elif model_choice == "Decision Tree":
+            model = DecisionTreeRegressor()
+        elif model_choice == "Support Vector Machine":
+            model = SVR()
+        elif model_choice == "k-Nearest Neighbors":
+            model = KNeighborsRegressor()
+        else:
+            model = RandomForestRegressor()
 
 
 if __name__ == "__main__":
