@@ -53,14 +53,19 @@ def main():
         elif model_choice == "Decision Tree":
             model = DecisionTreeRegressor()
             model_code = """
-                from sklearn.tree import DecisionTreeClassifier,
+                from sklearn.tree import DecisionTreeClassifier
                 clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
                 clf.fit(X_train, y_train)
                 score = accuracy_score(y_test, clf.predict(X_test))
             """
         elif model_choice == "Support Vector Machine":
             model = SVR()
-            model_code = "model = SVR()\nmodel.fit(X_train, y_train)"
+            model_code = """"
+                from sklearn.svm import SVR
+                clf = SVR(kernel=kernel)
+                clf.fit(X_train, y_train)
+                score = mean_squared_error(y_test, clf.predict(X_test))
+            """
         elif model_choice == "k-Nearest Neighbors":
             model = KNeighborsRegressor()
             model_code = "model = KNeighborsRegressor()\nmodel.fit(X_train, y_train)"
