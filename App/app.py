@@ -52,6 +52,20 @@ def main():
             model = KNeighborsRegressor()
         else:
             model = RandomForestRegressor()
+            
+            
+        # Model Training
+        model.fit(X_train, y_train)
+
+        # Model Evaluation
+        y_pred = model.predict(X_test)
+        mse = mean_squared_error(y_test, y_pred)
+        r2 = r2_score(y_test, y_pred)
+
+        st.write("### Model Evaluation")
+        st.write(f"Mean Squared Error: {mse:.2f}")
+        st.write(f"R-squared: {r2:.2f}")
+
 
 
 if __name__ == "__main__":
