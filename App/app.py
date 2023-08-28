@@ -25,6 +25,12 @@ def main():
         data = pd.read_csv(uploaded_file)
         st.write("Uploaded dataset: ")
         st.write(data.head())
+        
+        # Target variable and Feature Selection
+        st.sidebar.header("Select Target Variable and Features")
+        target_variable = st.sidebar.selectbox("Select target variable", data.columns)
+        selected_features = st.sidebar.multiselect("Select features", data.columns)
+
 
 if __name__ == "__main__":
     main()
