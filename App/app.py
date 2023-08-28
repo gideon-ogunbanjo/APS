@@ -9,6 +9,11 @@ from sklearn.svm import SVR
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
+# Page Configuration
+st.set_page_config(
+    page_title= "APS",
+    layout="centered",
+)
 # Main Function
 def main():
     st.title("APS - Algorithm Predictive Modeling App")
