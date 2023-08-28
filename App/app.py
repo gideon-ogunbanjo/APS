@@ -30,6 +30,12 @@ def main():
         st.sidebar.header("Select Target Variable and Features")
         target_variable = st.sidebar.selectbox("Select target variable", data.columns)
         selected_features = st.sidebar.multiselect("Select features", data.columns)
+        
+        # Splitting data into train and test sets
+        X = data[selected_features]
+        y = data[target_variable]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
 
 
 if __name__ == "__main__":
