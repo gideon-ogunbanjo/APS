@@ -75,9 +75,12 @@ def main():
             """
         else:
             model = RandomForestRegressor()
-            model_code = "model = RandomForestRegressor()\nmodel.fit(X_train, y_train)"
-            
-            
+            model_code = """
+                from sklearn.ensemble import RandomForestRegressor
+                model = RandomForestRegressor(n_estimators = 1000, random_state = 42)
+                model.fit(X_train, y_train)
+            """
+                   
         # Model Training
         model.fit(X_train, y_train)
 
