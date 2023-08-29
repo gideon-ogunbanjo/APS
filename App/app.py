@@ -68,7 +68,11 @@ def main():
             """
         elif model_choice == "k-Nearest Neighbors":
             model = KNeighborsRegressor()
-            model_code = "model = KNeighborsRegressor()\nmodel.fit(X_train, y_train)"
+            model_code = """
+                from sklearn.neighbors import KNeighborsRegressor
+                model = KNeighborsRegressor((n_neighbors=2))
+                model.fit(X_train, y_train)
+            """
         else:
             model = RandomForestRegressor()
             model_code = "model = RandomForestRegressor()\nmodel.fit(X_train, y_train)"
