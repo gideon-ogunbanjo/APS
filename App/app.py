@@ -46,24 +46,24 @@ def main():
             model = LinearRegression()
             model_code = """
                 from sklearn.linear_model import LinearRegression
-                clf = LinearRegression()
-                clf.fit(X_train, y_train)
-                score = mean_squared_error(y_test, clf.predict(X_test))
+                model = LinearRegression()
+                model.fit(X_train, y_train)
+                score = mean_squared_error(y_test, model.predict(X_test))
             """
         elif model_choice == "Decision Tree":
             model = DecisionTreeRegressor()
             model_code = """
                 from sklearn.tree import DecisionTreeRegressor
-                clf = DecisionTreeRegressor(max_depth=max_depth, random_state=42)
-                clf.fit(X_train, y_train)
-                score = accuracy_score(y_test, clf.predict(X_test))
+                model = DecisionTreeRegressor(max_depth=max_depth, random_state=42)
+                model.fit(X_train, y_train)
+                score = accuracy_score(y_test, model.predict(X_test))
             """
         elif model_choice == "Support Vector Machine":
             model = SVR()
             model_code = """
                 from sklearn.svm import SVR
-                clf = SVR(kernel=kernel)
-                clf.fit(X_train, y_train)
+                model = SVR(kernel=kernel)
+                model.fit(X_train, y_train)
                 score = mean_squared_error(y_test, clf.predict(X_test))
             """
         elif model_choice == "k-Nearest Neighbors":
