@@ -64,7 +64,7 @@ def main():
                 from sklearn.svm import SVR
                 model = SVR(kernel=kernel)
                 model.fit(X_train, y_train)
-                score = mean_squared_error(y_test, clf.predict(X_test))
+                score = mean_squared_error(y_test, model.predict(X_test))
             """
         elif model_choice == "k-Nearest Neighbors":
             model = KNeighborsRegressor()
