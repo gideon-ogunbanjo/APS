@@ -17,7 +17,7 @@ st.set_page_config(
 # Main Function
 def main():
     st.title("APS - Algorithm Predictive Studio")
-    st.write("APS is an Algorithm Predictive Modeling App. Upload a dataset, choose target variables and features, train a basic predictive model like linear regression, decision tree, or random forest and display evaluation metrics and predictions on new data.")
+    st.write("APS is an Algorithm Predictive Studio. Upload a dataset, choose target variables and features, train a basic predictive model like linear regression, decision tree, or random forest and display evaluation metrics and predictions on new data.")
     
     # File Uploader Widget
     uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
@@ -42,6 +42,7 @@ def main():
             ("Linear Regression", "Decision Tree", "Random Forest", "Support Vector Machine", "k-Nearest Neighbors")
         )
 
+        # Code Snippets
         if model_choice == "Linear Regression":
             model = LinearRegression()
             model_code = """
@@ -105,9 +106,6 @@ def main():
         new_df = pd.DataFrame([new_data])
         prediction = model.predict(new_df)
         st.write(f"Predicted {target_variable}: {prediction[0]:.2f}")
-
-
-
 
 if __name__ == "__main__":
     main()
