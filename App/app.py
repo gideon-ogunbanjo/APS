@@ -20,10 +20,18 @@ def main():
     st.write("APS is an Algorithm Predictive Studio. Upload a dataset, choose target variables and features, train a basic predictive model like linear regression, decision tree, or random forest and display evaluation metrics and predictions on new data.")
     
     # File Uploader Widget
-    uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
+    uploaded_file = st.file_uploader("Upload a CSV or Excel file", type=["csv", "xls", "xlsx"])
+
     if uploaded_file is not None:
-        data = pd.read_csv(uploaded_file)
-        st.write("Uploaded dataset: ")
+        if uploaded_file.name.endswith(('.xls', '.xlsx')):
+            data = pd.read_excel(uploaded_file)  # Read Excel file
+        elif uploaded_file.name.endswith('.csv'):
+            data = pd.read_csv(uploaded_file)     # Read CSV file
+        else:
+            st.error("Unsupported file format. Please upload a CSV or Excel file.")
+            st.stop()
+
+        st.write("Uploaded dataset:")
         st.write(data.head())
         
         # Target variable and Feature Selection
