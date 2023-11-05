@@ -57,14 +57,16 @@ def main():
                 from sklearn.linear_model import LinearRegression
                 model = LinearRegression()
                 model.fit(X_train, y_train)
+                model.predict(X_test)
                 score = mean_squared_error(y_test, model.predict(X_test))
             """
         elif model_choice == "Decision Tree":
             model = DecisionTreeRegressor()
             model_code = """
                 from sklearn.tree import DecisionTreeRegressor
-                model = DecisionTreeRegressor(max_depth=max_depth, random_state=42)
+                model = DecisionTreeRegressor(max_depth=max_depth, random_state=42)  # Adjust parameters to fit your data
                 model.fit(X_train, y_train)
+                model.predict(X_test)
                 score = accuracy_score(y_test, model.predict(X_test))
             """
         elif model_choice == "Support Vector Machine":
@@ -73,20 +75,22 @@ def main():
                 from sklearn.svm import SVR
                 model = SVR(kernel=kernel)
                 model.fit(X_train, y_train)
+                model.predict(X_test)
                 score = mean_squared_error(y_test, model.predict(X_test))
             """
         elif model_choice == "k-Nearest Neighbors":
             model = KNeighborsRegressor()
             model_code = """
                 from sklearn.neighbors import KNeighborsRegressor
-                model = KNeighborsRegressor((n_neighbors=2))
+                model = KNeighborsRegressor((n_neighbors=2)) # Adjust parameters to fit your data
                 model.fit(X_train, y_train)
+                model.predict(X_test)
             """
         else:
             model = RandomForestRegressor()
             model_code = """
                 from sklearn.ensemble import RandomForestRegressor
-                model = RandomForestRegressor(n_estimators = 1000, random_state = 42)
+                model = RandomForestRegressor(n_estimators = 1000, random_state = 42)  # Adjust parameters to fit your data
                 model.fit(X_train, y_train)
             """
                    
