@@ -16,8 +16,8 @@ st.set_page_config(
 )
 # Main Function
 def main():
-    st.title("APS - Algorithm Predictive Studio")
-    st.write("APS is an Algorithm Predictive Studio. Upload a dataset, choose target variables and features, train a basic predictive model like linear regression, decision tree, or random forest and display evaluation metrics and predictions on new data.")
+    st.title("A.P.S - Algorithm Predictive Studio")
+    st.write("A.P.S is an Algorithm Predictive Studio. Upload a dataset, choose target variables and features, train a basic predictive model like linear regression, decision tree, or random forest and display evaluation metrics and predictions on new data.")
     
     # File Uploader Widget
     uploaded_file = st.file_uploader("Upload a CSV or Excel file", type=["csv", "xls", "xlsx"])
@@ -57,7 +57,6 @@ def main():
                 from sklearn.linear_model import LinearRegression
                 model = LinearRegression()
                 model.fit(X_train, y_train)
-                model.predict(X_test)
                 score = mean_squared_error(y_test, model.predict(X_test))
             """
         elif model_choice == "Decision Tree":
@@ -66,7 +65,6 @@ def main():
                 from sklearn.tree import DecisionTreeRegressor
                 model = DecisionTreeRegressor(max_depth=max_depth, random_state=42)  # Adjust parameters to fit your data
                 model.fit(X_train, y_train)
-                model.predict(X_test)
                 score = accuracy_score(y_test, model.predict(X_test))
             """
         elif model_choice == "Support Vector Machine":
@@ -75,7 +73,6 @@ def main():
                 from sklearn.svm import SVR
                 model = SVR(kernel=kernel)
                 model.fit(X_train, y_train)
-                model.predict(X_test)
                 score = mean_squared_error(y_test, model.predict(X_test))
             """
         elif model_choice == "k-Nearest Neighbors":
